@@ -14,7 +14,7 @@
         <div class="git_url">
           <%= whitelisted_url.git_url %>
           <%= link "Edit", to: whitelisted_url_path(@conn, :edit, whitelisted_url), class: "btn btn-default btn-sm pull-right" %>
-          <%= link "Delete", to: whitelisted_url_path(@conn, :delete, whitelisted_url), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-sm pull-right" %>
+          <%= link "Delete", to: whitelisted_url_path(@conn, :delete, whitelisted_url), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-sm pull-right" %>
         </div>
       <% end %>
     </div>
