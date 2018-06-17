@@ -19,6 +19,7 @@ class GitUrlInput extends Component {
         <Typeahead
           onChange={this.handleChange}
           options={this.props.urls}
+          placeholder="Git URL"
         />
       </div>
     );

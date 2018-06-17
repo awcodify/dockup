@@ -4,10 +4,10 @@ import DeploymentList from "./components/deployment_list"
 import DeploymentItem from "./components/deployment_item"
 import DeploymentForm from "./components/deployment_form"
 
-let deployment_form_container = document.getElementById('deployment_form_container');
+let deploymentFormContainer = document.getElementById('js-deployment-form-container');
 
-if (deployment_form_container) {
-  ReactDOM.render(<DeploymentForm/>, deployment_form_container);
+if (deploymentFormContainer) {
+  ReactDOM.render(<DeploymentForm/>, deploymentFormContainer);
 }
 
 const Deployment = {

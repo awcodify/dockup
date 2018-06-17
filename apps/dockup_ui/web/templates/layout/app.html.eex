@@ -13,25 +13,15 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between bg-light">
       <div class="container">
-        <a class="navbar-brand" href="/">Dockup</a>
+        <a class="navbar-brand">Dockup</a>
         <div class="navbar-nav">
-          <%= link("Recent Deployments", to: deployment_path(@conn, :index), class: "nav-item nav-link") %>
           <%= link("Configure", to: config_path(@conn, :index), class: "nav-item nav-link")%>
           <%= link("Logs", to: dockup_log_url(), class: "nav-item nav-link", target: "_blank")%>
         </div>
       </div>
     </nav>
-
-    <div class="container dockup-body">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
+    <%= render @view_module, @view_template, assigns %>
   </body>
 </html>

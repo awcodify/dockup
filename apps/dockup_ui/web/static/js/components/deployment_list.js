@@ -57,7 +57,8 @@ class DeploymentList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="recent-deployments">
+        <h4>Recent Deployments</h4>
         {this.state.deployments.map((deployment) => {
           return (
             <DeploymentCard key={deployment.id} deployment={deployment}/>

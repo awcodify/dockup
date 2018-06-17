@@ -2,42 +2,190 @@
 @import "font-awesome";
 @import "notie";
 
+html, body {
+  font-family: 'Lato', sans-serif;
+}
+
+input[type="text"], .btn {
+  border-radius: 3px !important;
+}
+
+.btn-primary {
+  background: rgba(59, 117, 255, 1);
+  border-color: rgba(59, 117, 255, 1);
+
+  &:hover {
+    background: rgba(59, 117, 200, 1);
+    border-color: rgba(59, 117, 200, 1);
+  }
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ignore these styles as they already exixts */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
 .container {
-  max-width: 800px;
-}
-
-.dockup-body {
-  padding-top: 30px;
-}
-
-.alert:empty { display: none; }
-
-.dockup-card {
-width: 100%
-}
-
-.dockup-card-timeago {
-  font-size: 1rem;
-  min-width: 100px;
-}
-
-.dockup-card-footer {
-  background-color: transparent;
-  border: none;
-}
-
-.dockup-card-icon {
-  font-size: 1.5rem !important;
-  margin-left: 10px;
-}
-
-.dockup-card-status {
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+/* end */
+
+nav.navbar {
+
+  .form {
+    width: 600px;
+
+    form {
+      .form-group {
+        width: 225px;
+
+        input[type="text"] {
+          width: 100%;
+        }
+      }
+
+      button {
+        margin-left: 20px;
+      }
+    }
+  }
+  input[type="text"].input-lg{
+    font-size: 14px;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 5px;
+  }
+
+  button.deploy-btn {
+    font-size: 14px;
+    padding: 12px 20px;
+    letter-spacing: 1px;
+    margin-left: 5px;
+  }
 }
 
-.dockup-card-branch {
-  font-size: 1.5rem;
+.recent-deployments {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 600px;
+
+  h4 {
+    margin-bottom: 50px;
+    color: #7A60E9;
+  }
+
+  .deployment-info-card {
+    width: 100%;
+    margin: 10px auto;
+    border-bottom: 1px solid #e9e9e9;
+    padding-bottom: 10px;
+    position: relative;
+
+
+    .icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #3c73f6;
+    }
+
+    .body {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+      width: 80%;
+
+      .info {
+        font-size: 15px;
+      }
+
+      .actions {
+        position: absolute;
+        top: 0;
+        right: 0px;
+
+        a {
+          display: inline-block;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+.deploy-form {
+  height: 195px;
+  margin-top: -20px;
+
+  form {
+    margin: 0px auto;
+    width: 80%;
+    max-width: 600px;
+    padding-top: 150px;
+
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      margin-top:20px;
+    }
+  }
+}
+
+.deployment-form-container {
+  width: 80%;
+  margin: 150px auto;
+  max-width: 600px;
+
+  .recent-deployments {
+    width: 100%;
+    margin-top: 50px;
+    border-top: 1px solid #e9e9e9;
+    padding-top: 20px;
+  }
+}
+
+.configure-dockup-form-container {
+  margin-top:  -20px;
+  padding-top: 50px;
+  height: 195px;
+
+  .configure-dockup-form {
+    width: 600px;
+    margin: 0 auto;
+
+    .heading {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    .subheading-bold {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .whitelisted_urls {
+      margin-top: 100px;
+
+      h5 {
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e9e9e9;
+      }
+
+      .git_url {
+        padding: 10px 0 20px 0;
+        margin: 10px 0;
+        border-bottom: 1px solid #e9e9e9;
+      }
+    }
+  }
 }

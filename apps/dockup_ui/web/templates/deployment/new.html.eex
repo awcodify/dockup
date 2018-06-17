@@ -1,5 +1,7 @@
-<div id="deployment_form_container"></div>
+<div class="deploy-form bg-light" id="js-deployment-form-container"></div>
+<div class="deployment-form-container" id="js-deployments-list-container"></div>
 
 <script type="text/javascript">
-Deployment.mountDeploymentForm("deployment_form_container", '<%=raw  @whitelisted_urls_json %>');
+  Deployment.mountDeploymentForm("js-deployment-form-container", '<%=raw  @whitelisted_urls_json %>');
+  Deployment.mountDeploymentList("js-deployments-list-container");
 </script>

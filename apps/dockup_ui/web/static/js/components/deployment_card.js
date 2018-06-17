@@ -39,12 +39,12 @@ class DeploymentCard extends Component {
     }
   }
 
-  renderLogButton() {
+  renderLogLink() {
     let url = this.props.deployment.log_url;
     if(url) {
       let absoluteUrl = (url.indexOf("http") === 0 ? url : `//${url}`);
       return(
-        <a href={absoluteUrl} className="btn btn-outline-primary mr-2" target="_blank">Logs</a>
+        <a href={absoluteUrl} target="_blank">Logs</a>
       )
     }
   }
@@ -68,10 +68,10 @@ class DeploymentCard extends Component {
     });
   }
 
-  renderHibernateButton() {
+  renderHibernateLink() {
     if (this.props.deployment.status == "started") {
       return(
-        <button type="button" onClick={this.handleHibernate} className="btn btn-outline-primary mr-2">Hibernate</button>
+        <a onClick={this.handleHibernate}>Hibernate</a>
       );
     }
   }
@@ -95,10 +95,10 @@ class DeploymentCard extends Component {
     });
   }
 
-  renderWakeUpButton() {
+  renderWakeUpLink() {
     if (this.props.deployment.status == "deployment_hibernated") {
       return(
-        <button type="button" onClick={this.handleWakeUp} className="btn btn-outline-primary mr-2">Wake Up</button>
+        <a onClick={this.handleWakeUp}>Wake Up</a>
       );
     }
   }
@@ -122,10 +122,10 @@ class DeploymentCard extends Component {
     });
   }
 
-  renderDeleteButton() {
+  renderDeleteLink() {
     if(this.props.deployment.status != "deployment_deleted" && this.props.deployment.status != "deleting_deployment") {
       return(
-        <button type="button" onClick={this.handleDelete} className="btn btn-outline-danger">Delete</button>
+        <a onClick={this.handleDelete}>Delete</a>
       );
     }
   }
@@ -135,36 +135,27 @@ class DeploymentCard extends Component {
     let borderClass = `border-${statusClass}`;
     let textClass = `text-${statusClass}`;
     return(
-      <div className="row mt-5">
-        <div className={`card ${borderClass} ${textClass} dockup-card`}>
-          <div className="card-body">
-            <div className="row">
-              <div className="col-8">
-                <h4 className="card-title display-4 dockup-card-branch">{this.props.deployment.branch}</h4>
-              </div>
-              <div className="col text-right dockup-card-timeago">
-                <TimeAgo date={this.props.deployment.inserted_at} title={new Date(this.props.deployment.inserted_at)}/>
-              </div>
-
-            </div>
-
-            <h6 className="card-subtitle mb-2">{this.getGithubRepo()}</h6>
-
-
+      <div className="deployment-info-card">
+        <div className="icon"></div>
+        <div className="body">
+          <div class="info">
+            {this.props.deployment.branch}
+            <small>
+              <TimeAgo title={new Date(this.props.deployment.inserted_at)}
+                       date={this.props.deployment.inserted_at}/>
+            </small>
+            <br />
+            <small>
+              {this.getGithubRepo()}
+            </small>
           </div>
-          <div className="card-footer dockup-card-footer">
-            <div className="row">
-              <div className="col-8">
-                {this.renderOpenButton()}
-                {this.renderLogButton()}
-                {this.renderHibernateButton()}
-                {this.renderWakeUpButton()}
-                {this.renderDeleteButton()}
-              </div>
-
-              <DeploymentStatus status={this.props.deployment.status}/>
-            </div>
-          </div>
+          <span className="actions">
+            {this.renderDeleteLink()}
+            {this.renderLogLink()}
+            {this.renderHibernateLink()}
+            {this.renderWakeUpLink()}
+            {this.renderOpenButton()}
+          </span>
         </div>
       </div>
     );
