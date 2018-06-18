@@ -63,7 +63,7 @@ exports.config = {
     sass: {
       options: {
         includePaths: [
-          "node_modules/bootstrap/scss",
+          "node_modules",
           "node_modules/react-bootstrap-typeahead/css",
           "node_modules/notie/src",
           "node_modules/font-awesome/scss"

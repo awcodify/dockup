@@ -77,6 +77,16 @@ class DeploymentForm extends Component {
     }
   }
 
+  renderSubmit() {
+    if (this.validInputs()) {
+      return <input type="submit" className="btn btn-primary btn-lg" value="Deploy"
+                    onClick={this.handleDeployClick} />;
+    } else {
+      return <input type="submit" className="btn btn-primary btn-lg" value="Deploy"
+                    onClick={this.handleDeployClick} disabled="disabled" />;
+    }
+  }
+
   render() {
     return (
       <form>
@@ -88,8 +98,7 @@ class DeploymentForm extends Component {
                  onChange={(event) => { this.handleBranchChange(event.target.value)}}/>
         </div>
         <div class="form-group-lg">
-          <input type="submit" className="btn btn-primary btn-lg" value="Deploy"
-                 onClick={this.handleDeployClick} disabled={!this.validInputs()}/>
+          {this.renderSubmit()}
         </div>
       </form>
     )

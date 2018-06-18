@@ -1,6 +1,11 @@
-@import "bootstrap";
+@import "custom";
+@import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import "notie";
+
+.btn-primary {
+  border: 1px solid #336CD1;
+}
 
 html, body {
   font-family: 'Lato', sans-serif;
@@ -8,16 +13,6 @@ html, body {
 
 input[type="text"], .btn {
   border-radius: 3px !important;
-}
-
-.btn-primary {
-  background: rgba(59, 117, 255, 1);
-  border-color: rgba(59, 117, 255, 1);
-
-  &:hover {
-    background: rgba(59, 117, 200, 1);
-    border-color: rgba(59, 117, 200, 1);
-  }
 }
 
 a:hover {
