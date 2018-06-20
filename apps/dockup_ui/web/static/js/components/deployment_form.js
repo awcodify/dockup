@@ -78,22 +78,27 @@ class DeploymentForm extends Component {
   }
 
   renderSubmit() {
-    if (this.validInputs()) {
-      return <input type="submit" className="btn btn-primary btn-lg" value="Deploy"
-                    onClick={this.handleDeployClick} />;
-    } else {
-      return <input type="submit" className="btn btn-primary btn-lg" value="Deploy"
-                    onClick={this.handleDeployClick} disabled="disabled" />;
-    }
+    return <input type="submit" className="btn btn-primary btn-lg" value="Deploy"
+                  onClick={this.handleDeployClick} />;
   }
 
   render() {
     return (
       <form>
-        <div class="form-group-lg">
+        <div className="input-group">
+          <div className="input-group-prepend">
+            <div className="input-group-text">
+              <img src="/images/icon-branch.svg" />
+            </div>
+          </div>
           <GitUrlInput urls={this.urls} onUrlChange={this.handleUrlChange}/>
         </div>
-        <div class="form-group-lg">
+        <div className="input-group">
+          <div className="input-group-prepend">
+            <div className="input-group-text">
+              <img src="/images/icon-branch.svg" />
+            </div>
+          </div>
           <input className="form-control" id="branch" placeholder="Branch"
                  onChange={(event) => { this.handleBranchChange(event.target.value)}}/>
         </div>

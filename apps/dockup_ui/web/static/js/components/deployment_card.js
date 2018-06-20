@@ -136,14 +136,18 @@ class DeploymentCard extends Component {
     let textClass = `text-${statusClass}`;
     return(
       <div className="deployment-info-card">
-        <div className="icon"></div>
+        <div className="icon">
+          <i className="fa fa-check" aria-hidden="true"></i>
+        </div>
         <div className="body">
           <div class="info">
             {this.props.deployment.branch}
-            <small>
-              <TimeAgo title={new Date(this.props.deployment.inserted_at)}
-                       date={this.props.deployment.inserted_at}/>
-            </small>
+            <span className="badge badge-pill badge-primary">
+              <small>
+                <TimeAgo title={new Date(this.props.deployment.inserted_at)}
+                         date={this.props.deployment.inserted_at}/>
+              </small>
+            </span>
             <br />
             <small>
               {this.getGithubRepo()}

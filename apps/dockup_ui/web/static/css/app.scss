@@ -7,14 +7,6 @@
   border: 1px solid #336CD1;
 }
 
-html, body {
-  font-family: 'Lato', sans-serif;
-}
-
-input[type="text"], .btn {
-  border-radius: 3px !important;
-}
-
 a:hover {
   cursor: pointer;
   text-decoration: none;
@@ -22,7 +14,7 @@ a:hover {
 
 /* ignore these styles as they already exixts */
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #F9F9F9 !important;
 }
 
 .container {
@@ -33,7 +25,6 @@ a:hover {
 /* end */
 
 nav.navbar {
-
   .form {
     width: 600px;
 
@@ -87,10 +78,12 @@ nav.navbar {
 
     .icon {
       display: inline-block;
+      padding: 9px 9px 9px 14px;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: #3c73f6;
+      background: $secondary;
+      color: white;
     }
 
     .body {
@@ -118,7 +111,7 @@ nav.navbar {
 }
 
 .deploy-form {
-  height: 195px;
+  height: 189px;
   margin-top: -20px;
 
   form {
@@ -132,6 +125,18 @@ nav.navbar {
       width: 100%;
       margin-top:20px;
     }
+  }
+
+  .rbt-input {
+    width: 559px;
+    border: 1px solid #E2E2E2;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .form-control {
+    border: 1px solid #E2E2E2;
+    border-radius: 0 0 2px 2px;
+    background-color: #FFFFFF;
   }
 }
 
