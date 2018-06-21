@@ -88,7 +88,7 @@ class DeploymentForm extends Component {
         <div className="input-group">
           <div className="input-group-prepend">
             <div className="input-group-text">
-              <img src="/images/icon-branch.svg" />
+        <img src="/images/icon-git.svg" width="16px" />
             </div>
           </div>
           <GitUrlInput urls={this.urls} onUrlChange={this.handleUrlChange}/>
@@ -96,7 +96,7 @@ class DeploymentForm extends Component {
         <div className="input-group">
           <div className="input-group-prepend">
             <div className="input-group-text">
-              <img src="/images/icon-branch.svg" />
+              <img src="/images/icon-branch.svg" width="16px" />
             </div>
           </div>
           <input className="form-control" id="branch" placeholder="Branch"

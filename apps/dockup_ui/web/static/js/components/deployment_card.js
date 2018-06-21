@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TimeAgo from 'react-timeago';
 import DeploymentStatus from './deployment_status';
-import {getStatusColorClass} from '../status_colors';
 import FlashMessage from '../flash_message';
 
 class DeploymentCard extends Component {
@@ -34,7 +33,7 @@ class DeploymentCard extends Component {
     if(url) {
       let absoluteUrl = `http://${url}`;
       return(
-        <a href={absoluteUrl} className="btn btn-outline-primary mr-2" target="_blank">Open</a>
+        <a href={absoluteUrl} className="btn btn-secondary mr-2" target="_blank">Open</a>
       )
     }
   }
@@ -44,7 +43,7 @@ class DeploymentCard extends Component {
     if(url) {
       let absoluteUrl = (url.indexOf("http") === 0 ? url : `//${url}`);
       return(
-        <a href={absoluteUrl} target="_blank">Logs</a>
+        <a href={absoluteUrl} className="text-muted" target="_blank">Logs</a>
       )
     }
   }
@@ -71,7 +70,7 @@ class DeploymentCard extends Component {
   renderHibernateLink() {
     if (this.props.deployment.status == "started") {
       return(
-        <a onClick={this.handleHibernate}>Hibernate</a>
+        <a onClick={this.handleHibernate} href="#" className="text-muted">Hibernate</a>
       );
     }
   }
@@ -98,7 +97,7 @@ class DeploymentCard extends Component {
   renderWakeUpLink() {
     if (this.props.deployment.status == "deployment_hibernated") {
       return(
-        <a onClick={this.handleWakeUp}>Wake Up</a>
+        <a onClick={this.handleWakeUp} href="#" className="text-muted">Wake Up</a>
       );
     }
   }
@@ -125,24 +124,19 @@ class DeploymentCard extends Component {
   renderDeleteLink() {
     if(this.props.deployment.status != "deployment_deleted" && this.props.deployment.status != "deleting_deployment") {
       return(
-        <a onClick={this.handleDelete}>Delete</a>
+        <a onClick={this.handleDelete} href="#" className="text-muted">Delete</a>
       );
     }
   }
 
   render() {
-    let statusClass = getStatusColorClass(this.props.deployment.status);
-    let borderClass = `border-${statusClass}`;
-    let textClass = `text-${statusClass}`;
     return(
       <div className="deployment-info-card">
-        <div className="icon">
-          <i className="fa fa-check" aria-hidden="true"></i>
-        </div>
+        <DeploymentStatus status={this.props.deployment.status}/>
         <div className="body">
           <div class="info">
             {this.props.deployment.branch}
-            <span className="badge badge-pill badge-primary">
+            <span className="badge badge-pill badge-gray">
               <small>
                 <TimeAgo title={new Date(this.props.deployment.inserted_at)}
                          date={this.props.deployment.inserted_at}/>
