@@ -4,10 +4,12 @@
 @import "notie";
 
 .btn-primary {
+  box-shadow: inset 0 -1px 0 0 #336CD1;
   border: 1px solid #336CD1;
 }
 
 .btn-secondary {
+  box-shadow: inset 0 -1px 0 0 #138D59;
   border: 1px solid #138D59;
 }
 
@@ -118,7 +120,7 @@ a:hover {
 
         a {
           display: inline-block;
-          margin: 0 5px;
+          margin: 0 20px;
         }
       }
     }

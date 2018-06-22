@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-cloning-repo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dockup---index---scroll" transform="translate(-575.000000, -534.000000)" fill="#FD9D00">
+            <g id="row" transform="translate(575.000000, 514.000000)">
+                <path d="M20,60 C8.954305,60 0,51.045695 0,40 C0,28.954305 8.954305,20 20,20 C31.045695,20 40,28.954305 40,40 C40,51.045695 31.045695,60 20,60 Z M29,37 L23,37 L23,31 C23,30.4477153 22.5522847,30 22,30 L11,30 C10.4477153,30 10,30.4477153 10,31 L10,42 C10,42.5522847 10.4477153,43 11,43 L17,43 L17,49 C17,49.5522847 17.4477153,50 18,50 L29,50 C29.5522847,50 30,49.5522847 30,49 L30,38 C30,37.4477153 29.5522847,37 29,37 Z M11,31 L22,31 L22,42 L11,42 L11,31 Z M29,49 L18,49 L18,43 L22,43 C22.5522847,43 23,42.5522847 23,42 L23,38 L29,38 L29,49 Z" id="icon-cloning-repo"></path>
+            </g>
+        </g>
+    </g>
+</svg>
