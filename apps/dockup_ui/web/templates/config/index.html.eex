@@ -1,9 +1,9 @@
 <div class="bg-light configure-dockup-form-container">
   <div class="configure-dockup-form">
-    <div class="heading">
+    <h4>
       Configure dockup
-      <%= link "Add new whitelist", to: whitelisted_url_path(@conn, :new), class: "btn btn-success pull-right" %>
-    </div>
+      <%= link "Add new whitelist", to: whitelisted_url_path(@conn, :new), class: "btn btn-secondary pull-right" %>
+    </h4>
     <div class="subheading-bold">Whitelisted URLs</div>
     <p>
       Dockup allows you to deploy only Whitelisted Git URLs. This is to prevent malicious code being run inside docker containers on your services.
@@ -13,8 +13,13 @@
       <%= for whitelisted_url <- @whitelisted_urls do %>
         <div class="git_url">
           <%= whitelisted_url.git_url %>
-          <%= link "Edit", to: whitelisted_url_path(@conn, :edit, whitelisted_url), class: "btn btn-default btn-sm pull-right" %>
-          <%= link "Delete", to: whitelisted_url_path(@conn, :delete, whitelisted_url), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-sm pull-right" %>
+          <div class="actions">
+            <%= link "Edit", to: whitelisted_url_path(@conn, :edit, whitelisted_url),
+                             class: "text-muted pull-right" %>
+            <%= link "Delete", to: whitelisted_url_path(@conn, :delete, whitelisted_url),
+                               method: :delete, data: [confirm: "Are you sure?"],
+                               class: "text-muted pull-right" %>
+          </div>
         </div>
       <% end %>
     </div>

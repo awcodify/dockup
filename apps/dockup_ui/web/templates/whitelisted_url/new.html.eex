@@ -1,8 +1,9 @@
 <div class="whitelist-url-form">
-  <h2>New whitelisted url</h2>
+  <h3>New whitelisted url</h3>
+
+  <hr/>
 
   <%= render "form.html", changeset: @changeset,
-                          action: whitelisted_url_path(@conn, :create) %>
-
-  <span><%= link "Back", to: config_path(@conn, :index) %></span>
+                          action: whitelisted_url_path(@conn, :create),
+                          back: config_path(@conn, :index) %>
 </div>
